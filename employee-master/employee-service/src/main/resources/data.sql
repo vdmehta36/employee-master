@@ -1,0 +1,2 @@
+insert into EMPLOYEE_REGISTRATION  values(1,'Consultant','Rishikesh Kumar','A765565','Staffing','zyz','SI');
+insert into EMPLOYEE_REGISTRATION  values(2,'BTA','Vaibhav ','A765566','Staffing','zyz','SI');
