@@ -1,0 +1,37 @@
+.register {
+    &.card {
+        width: 40%;
+        min-height: 496px;
+        width: 40%;
+        max-width: 360px;
+        margin: auto;
+        bottom: 0;
+        margin-top: 4%;
+        left: 0;
+        right: 0;
+        min-width: 400px;
+        .field {
+            &:not(:last-child) {
+                margin-bottom: 0px;
+            }
+            p.help {
+                visibility: hidden;
+                &.visible {
+                    visibility: visible;
+                }
+            }
+        }
+    }
+    .link {
+        padding: 6px 0px;
+        float: left;
+    }
+    .flexi {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+    }
+    .button.sign-up {
+        
+    }
+}

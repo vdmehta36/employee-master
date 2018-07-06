@@ -1,0 +1,22 @@
+<div class="container">
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item brand">Employee Portal</a>
+    </div>
+    <div class="wrapper">
+      <a class="navbar-item" *ngIf="!!getUser()">Hello, {{getUser()}}</a>
+      <a class="navbar-item" *ngIf="!!getUser()" (click)="logout()">Sign out</a>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>
+</div>
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Employee Portal</strong> by
+        <a href="#">Vaibhav Mehta</a>.
+      </p>
+    </div>
+  </div>
+</footer>

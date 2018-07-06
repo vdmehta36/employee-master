@@ -1,0 +1,7 @@
+---
+applications:
+- name: employee-master-Angular
+  memory: 20M
+  instances: 1
+  random-route: true
+  buildpack: staticfile_buildpack

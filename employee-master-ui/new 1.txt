@@ -1,0 +1,11 @@
+https://employee-service-grumpy-sable.cfapps.io/employeedetail
+
+
+https://employee-service-grumpy-sable.cfapps.io/EmployeeRegistration
+
+https://employee-service-grumpy-sable.cfapps.io/EmployeeAuthentication
+
+Key: 5b3d00933e33130001ad56e6powerAdminUser
+powerAdminUser
+
+https://docs.mulesoft.com/mule-user-guide/v/3.8/consuming-a-rest-api

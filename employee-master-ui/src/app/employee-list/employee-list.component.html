@@ -1,0 +1,36 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th (click)="sortBy('sno')">SERIAL NO.</th>
+        <th>EMPLOYEE ID</th>
+        <th [title]="key === 'employeeName' && ( order === 'asc' ? 'Ascending' : 'Descending' ) || '' " class="sortable" [ngClass]="{'active': key === 'employeeName'}" (click)="sortBy('employeeName')">
+          <abbr [title]="key === 'employeeName' && ( order === 'asc' ? 'Ascending' : 'Descending' ) || '' ">EMPLOYEE NAME</abbr>
+          <span class="fas" [class.fa-arrow-up]="order === 'asc'" [class.fa-arrow-down]="order === 'dec'" [class.visible]="key === 'employeeName'"></span>
+        </th>
+        <th [title]="key === 'designation' && ( order === 'asc' ? 'Ascending' : 'Descending' ) || '' " class="sortable" [ngClass]="{'active': key === 'designation'}" (click)="sortBy('designation')">
+          <abbr [title]="key === 'designation' && ( order === 'asc' ? 'Ascending' : 'Descending' ) || '' ">DESIGNATION</abbr>
+          <span class="fas" [class.fa-arrow-up]="order === 'asc'" [class.fa-arrow-down]="order === 'dec'" [class.visible]="key === 'designation'"></span>
+        </th>
+        <th [title]="key === 'serviceLine' && ( order === 'asc' ? 'Ascending' : 'Descending' ) || '' " class="sortable" [ngClass]="{'active': key === 'serviceLine'}" (click)="sortBy('serviceLine')">
+          <abbr [title]="key === 'serviceLine' && ( order === 'asc' ? 'Ascending' : 'Descending' ) || '' ">SERVICE LINE</abbr>
+          <span class="fas" [class.fa-arrow-up]="order === 'asc'" [class.fa-arrow-down]="order === 'dec'" [class.visible]="key === 'serviceLine'"></span>
+        </th>
+        <th [title]="key === 'role' && ( order === 'asc' ? 'Ascending' : 'Descending' ) || '' " class="sortable" [ngClass]="{'active': key === 'role'}" (click)="sortBy('role')">
+          <abbr [title]="key === 'role' && ( order === 'asc' ? 'Ascending' : 'Descending' ) || '' ">ROLE</abbr>
+          <span class="fas" [class.fa-arrow-up]="order === 'asc'" [class.fa-arrow-down]="order === 'dec'" [class.visible]="key === 'role'"></span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let emp of employees; let index = index">
+      <tr>
+        <th>{{index + 1}}</th>   
+        <td>{{emp.employeeNumber}}</td>     
+        <td>{{emp.employeeName}}</td>     
+        <td>{{emp.designation}}</td>     
+        <td>{{emp.serviceLine}}</td>     
+        <td>{{emp.role}}</td>     
+      </tr>
+      </ng-container>
+    </tbody>
+  </table>

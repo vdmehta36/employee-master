@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~bulma/css/bulma.css';
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(223, 222, 222, 0.6);
+}
+
+.control.flex {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    .fill {
+        flex: 1;
+    }
+}
+
+.act {
+    pointer-events: all !important;
+    &.bordered {
+        font-size: 10px;
+        padding: 3px 6px;
+        margin: 0px 8px;
+        border: 1px inset #333;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    &:hover {
+        color: #333;
+    }
+}

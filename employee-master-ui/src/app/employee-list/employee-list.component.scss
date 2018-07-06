@@ -1,0 +1,21 @@
+.table {
+    margin: 10% auto;
+    width: 90%;
+    border: 1px solid #333;
+    thead {
+        background-color: rgba(0, 209, 178, 0.32);
+    }
+    th.sortable {
+        cursor: pointer;
+        span.fas {
+            font-size: 12px;
+            visibility: hidden;
+            &.visible {
+                visibility: visible;
+            }
+        }
+        &:hover {
+            background-color: rgb(255, 255, 255);
+        }
+    }
+}

@@ -1,0 +1,96 @@
+<div class="register card">
+  <header class="card-header">
+    <p class="card-header-title">
+      SIGN UP
+    </p>
+  </header>
+  <div class="card-content">
+    <div class="content">
+      <form #registerForm="ngForm">
+        <div class="field">
+          <!-- <label class="label">Name</label> -->
+          <div class="control">
+            <input class="input" pattern="[A-Za-z\s]+" name="employeeName" #empName="ngModel" [(ngModel)]="employeeName" type="text"
+              placeholder="Employee Name" required>
+          </div>
+          <p class="help is-danger" [class.visible]="(empName.touched || registerForm.submitted) && !empName.value && empName.invalid">Invalid Employee Name</p>
+        </div>
+        <div class="field">
+          <!-- <label class="label">Name</label> -->
+          <div class="control">
+            <input class="input" pattern="[0-9]+" maxlength="6" name="employeeNumber" #empNo="ngModel" [(ngModel)]="employeeNumber" type="text"
+              placeholder="Employee Number" required>
+          </div>
+          <p class="help is-danger" [class.visible]="(empNo.touched || registerForm.submitted) && empNo.invalid">Invalid Employee Number</p>
+        </div>
+        <div class="field">
+          <div class="control flex">
+
+            <!-- <label class="label">Name</label> -->
+            <div class="control has-icons-right fill">
+              <input class="input" name="password" [type]="visible ? 'text' : 'password'" #pwd="ngModel" [(ngModel)]="password" placeholder="Password"
+                required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}">
+              <span *ngIf="pwd?.value?.length" class="icon is-small is-right act">
+                <i class="fas fa-eye-slash" (click)="visible=!visible" *ngIf="visible; else notVisible"></i>
+                <ng-template #notVisible>
+                  <i class="fas fa-eye" (click)="visible=!visible"></i>
+                </ng-template>
+              </span>
+            </div>
+            <i class="fas fa-info act bordered" (click)="modal=true" title="Click for Password Policy"></i>
+            <div *ngIf="modal" class="modal is-active">
+              <div class="modal-background"></div>
+              <div class="modal-card">
+                <header class="modal-card-head">
+                  <p class="modal-card-title">Password Policy</p>
+                  <button class="delete" type="button" aria-label="close" (click)="modal=false"></button>
+                </header>
+                <section class="modal-card-body">
+                  <ul>
+                    <li>Minimum 8 Characters</li>
+                    <li>Atleat one uppercase and one lowercase letter</li>
+                    <li>Alteast one number</li>
+                    <li>Alteast one special character</li>
+                    <li>Allowed special characters @!$%&*?</li>
+                  </ul>
+                </section>
+                <footer class="modal-card-foot">
+                  <button class="button" (click)="modal = false">Okay</button>
+                </footer>
+              </div>
+            </div>
+          </div>
+          <p class="help is-danger" [class.visible]="(pwd.touched || registerForm.submitted) && pwd.invalid">Invalid password</p>
+        </div>
+        <div class="field">
+          <div class="control">
+            <input class="input" name="designation" maxlength="25" #desig="ngModel" [(ngModel)]="designation" type="text" placeholder="Designation"
+              pattern="[A-Za-z\s]+" required>
+          </div>
+          <p class="help is-danger" [class.visible]="(desig.touched || registerForm.submitted) && !desig.value && desig.invalid">Invalid Designation</p>
+        </div>
+        <div class="field">
+          <div class="control">
+            <input class="input" name="serviceLine" #servLine="ngModel" [(ngModel)]="serviceLine" maxlength="25" type="text" placeholder="Service Line"
+              required>
+          </div>
+          <p class="help is-danger" [class.visible]="(servLine.touched || registerForm.submitted) && !servLine.value && servLine.invalid">Invalid Service Line</p>
+        </div>
+        <div class="field">
+          <div class="control">
+            <input class="input" name="role" #roles="ngModel" [(ngModel)]="role" maxlength="25" type="text" placeholder="Role" pattern="[A-Za-z\s]+"
+              required>
+          </div>
+          <p class="help is-danger" [class.visible]="(roles.touched || registerForm.submitted) && !roles.value && roles.invalid">Invalid Role</p>
+        </div>
+        <div class="control flexi">
+          <button class="button is-primary sign-up" type="submit" (click)="register(registerForm)">SIGN UP</button>
+          <div class="control link">
+            Existing Employee?
+            <a routerLink="/login">SIGN IN</a> here
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+.container {
+    height: 100%; // overflow: hidden;
+    background-color: #fff;
+    max-width: 1024px;
+}
+
+.navbar {
+    background-color: #00d1b2;
+    justify-content: space-between;
+    padding: 0px 18px;
+    .wrapper {
+        display: flex;
+        flex-flow: row wrap;
+    }
+    a.navbar-item {
+        color: #ffffff;
+        &.brand {
+            font-weight: 700;
+            font-size: 24px;
+        }
+    }
+    .navbar-brand {
+        a.navbar-item {
+            &.brand {
+                font-weight: 700;
+                font-size: 24px;
+            }
+        }
+    }
+    .navbar-item:hover {
+        color: #333;
+    }
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 12px;
+}
